@@ -22,7 +22,7 @@ const style = `
   }
   .emoji-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
   }
@@ -34,6 +34,8 @@ const style = `
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     cursor: pointer;
+    min-width: 0;
+    width: 100%;
   }
   .emoji-card:hover {
     transform: translateY(-5px);
@@ -41,6 +43,48 @@ const style = `
   .emoji {
     font-size: 4rem;
     margin-bottom: 0.5rem;
+  }
+
+  /* Mobile Responsive Styles */
+  @media (max-width: 600px) {
+    body {
+      padding: 0.75rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.25rem;
+    }
+    .subtitle {
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .emoji-grid {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    .emoji-card {
+      padding: 0.75rem;
+      margin-bottom: 0.5rem;
+      min-width: 0;
+    }
+    .emoji {
+      font-size: 2.75rem;
+      margin-bottom: 0.25rem;
+    }
+    .name {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+    .votes {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    .vote-btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 1.1rem;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
   }
   .name {
     font-size: 1.2rem;
